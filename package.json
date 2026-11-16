@@ -1,7 +1,7 @@
 {
-  "name": "@gongrzhe/server-gmail-autoauth-mcp",
-  "version": "1.1.11",
-  "description": "Gmail MCP server with auto authentication support",
+  "name": "@emilefyon/gmail-mcp",
+  "version": "2.0.0",
+  "description": "Minimal Gmail MCP server: search, read, download attachments, create drafts. Read + compose scopes only.",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -11,55 +11,39 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "auth": "node dist/index.js auth",
-    "prepare": "npm run build",
+    "test": "tsc && node --test dist/*.test.js",
     "prepublishOnly": "npm run build"
   },
   "files": [
     "dist",
+    "!dist/*.test.js",
     "README.md"
   ],
   "keywords": [
     "gmail",
     "mcp",
-    "cursor",
-    "ai",
-    "oauth",
-    "model-context-protocol",
-    "google-gmail",
     "claude",
-    "auto-auth"
+    "model-context-protocol"
   ],
-  "author": "gongrzhe",
-  "license": "ISC",
+  "author": "emilefyon",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gongrzhe/server-gmail-autoauth-mcp.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gongrzhe/server-gmail-autoauth-mcp/issues"
-  },
-  "homepage": "https://github.com/gongrzhe/server-gmail-autoauth-mcp#readme",
-  "publishConfig": {
-    "access": "public"
+    "url": "git+https://github.com/emilefyon/Gmail-MCP-Server.git"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=20"
   },
+  "os": [
+    "darwin"
+  ],
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.4.0",
-    "@types/mime-types": "^2.1.4",
-    "google-auth-library": "^9.4.1",
-    "googleapis": "^129.0.0",
-    "mcp-evals": "^1.0.18",
-    "mime-types": "^3.0.1",
-    "nodemailer": "^7.0.3",
-    "open": "^10.0.0",
-    "zod": "^3.22.4",
-    "zod-to-json-schema": "^3.22.1"
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "google-auth-library": "11.3.4",
+    "zod": "4.6.7"
   },
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "@types/nodemailer": "^6.4.17",
-    "typescript": "^5.3.3"
+    "@types/node": "26.6.6",
+    "typescript": "7.0.2"
   }
 }
